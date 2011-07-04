@@ -17,6 +17,8 @@
 
 .item-inner {
 	padding: .5cm;
+	width: 100%;
+	height: 100%;
 }
 
 .item-sprint {
@@ -89,22 +91,20 @@
 
 <xsl:template match="item">
 <div class="item">
-<div class="item-inner">
-<div class="item-sprint">Спринт 39</div>
-<div class="item-project-name"><xsl:value-of select="project"/></div>
-<div class="item-key"><xsl:value-of select="key"/></div>
-<div class="item-name"><xsl:value-of select="summary"/></div>
-<div class="item-stories">
-
-<xsl:call-template name="story-boxes"> 
-<xsl:with-param name="i">0</xsl:with-param> 
-<xsl:with-param name="count">
-<xsl:value-of select="customfields/*[customfieldname='Story Points']/customfieldvalues/customfieldvalue"/>
-</xsl:with-param> 
-</xsl:call-template>
-
-</div>
-</div>
+<table class="item-inner">
+	<tr><td colspan="2"><span class="item-sprint">Спринт 39</span></td></tr>
+	<tr><td><span class="item-key"><xsl:value-of select="key"/></span></td>
+		<td><span class="item-project-name"><xsl:value-of select="project"/></span></td></tr>
+	<tr><td colspan="2"><span class="item-name"><xsl:value-of select="summary"/></span></td></tr>
+	<tr><td colspan="2"><div class="item-stories">
+		<xsl:call-template name="story-boxes"> 
+		<xsl:with-param name="i">0</xsl:with-param> 
+		<xsl:with-param name="count">
+		<xsl:value-of select="customfields/*[customfieldname='Story Points']/customfieldvalues/customfieldvalue"/>
+		</xsl:with-param> 
+		</xsl:call-template>
+	</div></td></tr>
+</table>
 </div>
 </xsl:template>
 
