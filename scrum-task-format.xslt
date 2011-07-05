@@ -30,6 +30,11 @@
 	text-decoration: underline;
 }
 
+.item-component-name {
+	float: right;
+	font-style: italic;
+}
+
 .item-key {
 	font-weight: bold;
 	clear: both;
@@ -92,9 +97,11 @@
 <xsl:template match="item">
 <div class="item">
 <table class="item-inner">
-	<tr><td colspan="2"><span class="item-sprint">Спринт 39</span></td></tr>
+	<tr><td><span class="item-sprint">Спринт 39</span></td>
+		<td><span class="item-project-name"><xsl:value-of select="project"/></span></td>
+	</tr>
 	<tr><td><span class="item-key"><xsl:value-of select="key"/></span></td>
-		<td><span class="item-project-name"><xsl:value-of select="project"/></span></td></tr>
+		<td><span class="item-component-name"><xsl:value-of select="component"/></span></td></tr>
 	<tr><td colspan="2"><span class="item-name"><xsl:value-of select="summary"/></span></td></tr>
 	<tr><td colspan="2"><div class="item-stories">
 		<xsl:call-template name="story-boxes"> 
