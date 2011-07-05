@@ -7,16 +7,16 @@
 <title></title>
 <style type="text/css">
 .item {
-	width: 10cm;
-	height: 5cm;
+	width: 9cm;
+	height: 6cm;
 	border: 1px solid #000;
 	float: left;
-	margin-right: .2cm;
-	margin-bottom: .2cm;
+	margin-right: .05cm;
+	margin-bottom: .05cm;
 }
 
 .item-inner {
-	padding: .5cm;
+	padding: .04cm;
 	width: 100%;
 	height: 100%;
 }
@@ -48,6 +48,7 @@
 
 .item-stories {
 	margin-top: .7cm;
+	margin-left: .2cm;
 }
 
 .item-story-box {
