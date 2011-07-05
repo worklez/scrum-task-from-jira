@@ -76,19 +76,13 @@
 
 
 <xsl:template name="story-boxes"> 
-	<xsl:param name="i" /> 
 	<xsl:param name="count" /> 
-	<xsl:if test="$i &lt; $count"> 
+	<xsl:if test="$count &gt; 0"> 
 		<div class="item-story-box"></div>
-	</xsl:if> 
 
-	<xsl:if test="$i &lt; $count"> 
 		<xsl:call-template name="story-boxes"> 
-			<xsl:with-param name="i"> 
-				<xsl:value-of select="$i + 1"/> 
-			</xsl:with-param> 
 			<xsl:with-param name="count"> 
-				<xsl:value-of select="$count"/> 
+				<xsl:value-of select="$count - 1"/> 
 			</xsl:with-param> 
 		</xsl:call-template> 
 	</xsl:if> 
@@ -106,7 +100,6 @@
 	<tr><td colspan="2"><span class="item-name"><xsl:value-of select="summary"/></span></td></tr>
 	<tr><td colspan="2"><div class="item-stories">
 		<xsl:call-template name="story-boxes"> 
-		<xsl:with-param name="i">0</xsl:with-param> 
 		<xsl:with-param name="count">
 		<xsl:value-of select="customfields/*[customfieldname='Story Points']/customfieldvalues/customfieldvalue"/>
 		</xsl:with-param> 
