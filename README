@@ -1,0 +1,4 @@
+Get a JIRA RSS feed via URL like a
+ $ wget -O tasks.xml http://jira/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?jqlQuery=YOUR_URLENCODED_JQL_QUERY
+and run
+ $ xsltproc scrum-task-format.xslt tasks.xml > tasks.html
